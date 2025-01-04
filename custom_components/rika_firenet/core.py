@@ -321,7 +321,7 @@ class RikaFirenetStove:
         if not self.is_stove_on():
             return HVACMode.OFF
 
-        if self.get_stove_operation_mode() is 0:
+        if self.get_stove_operation_mode() == 0:
             return HVACMode.HEAT
 
         if not self.is_heating_times_active_for_comfort():
