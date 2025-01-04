@@ -2,9 +2,7 @@ import logging
 
 from homeassistant.components.climate import ClimateEntity
 from homeassistant.components.climate.const import (
-    HVACMode.AUTO,
-    HVACMode.HEAT,
-    HVACMode.OFF,
+    HVACMode,
     SUPPORT_TARGET_TEMPERATURE
 )
 from homeassistant.const import (ATTR_TEMPERATURE, TEMP_CELSIUS)

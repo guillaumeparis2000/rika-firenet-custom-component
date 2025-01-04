@@ -5,9 +5,7 @@ from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 from homeassistant.components.climate.const import (
-    HVACMode.AUTO,
-    HVACMode.HEAT,
-    HVACMode.OFF,
+    HVACMode,
     PRESET_AWAY,
     PRESET_HOME
 )
