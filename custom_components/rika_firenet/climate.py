@@ -3,7 +3,7 @@ import logging
 from homeassistant.components.climate import ClimateEntity
 from homeassistant.components.climate.const import (
     HVACMode,
-    SUPPORT_TARGET_TEMPERATURE
+    ClimateEntityFeature
 )
 from homeassistant.const import (ATTR_TEMPERATURE, UnitOfTemperature)
 
@@ -13,7 +13,7 @@ from .entity import RikaFirenetEntity
 
 _LOGGER = logging.getLogger(__name__)
 
-SUPPORT_FLAGS = SUPPORT_TARGET_TEMPERATURE  # | SUPPORT_PRESET_MODE
+SUPPORT_FLAGS = ClimateEntityFeature.TARGET_TEMPERATURE  # | SUPPORT_PRESET_MODE
 
 MIN_TEMP = 14
 MAX_TEMP = 28
