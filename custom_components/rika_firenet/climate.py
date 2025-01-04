@@ -5,7 +5,7 @@ from homeassistant.components.climate.const import (
     HVACMode,
     SUPPORT_TARGET_TEMPERATURE
 )
-from homeassistant.const import (ATTR_TEMPERATURE, TEMP_CELSIUS)
+from homeassistant.const import (ATTR_TEMPERATURE, UnitOfTemperature)
 
 from .const import (DOMAIN, SUPPORT_PRESET)
 from .core import RikaFirenetCoordinator
@@ -90,7 +90,7 @@ class RikaFirenetStoveClimate(RikaFirenetEntity, ClimateEntity):
 
     @property
     def temperature_unit(self):
-        return TEMP_CELSIUS
+        return UnitOfTemperature.CELSIUS
 
     def set_temperature(self, **kwargs):
         temperature = int(kwargs.get(ATTR_TEMPERATURE))
