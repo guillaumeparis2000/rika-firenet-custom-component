@@ -1,10 +1,12 @@
 import logging
 
 from homeassistant.components.climate import ClimateEntity
-from homeassistant.components.climate.const import (HVAC_MODE_AUTO,
-                                                    HVAC_MODE_HEAT,
-                                                    HVAC_MODE_OFF,
-                                                    SUPPORT_TARGET_TEMPERATURE)
+from homeassistant.components.climate.const import (
+    HVACMode.AUTO,
+    HVACMode.HEAT,
+    HVACMode.OFF,
+    SUPPORT_TARGET_TEMPERATURE
+)
 from homeassistant.const import (ATTR_TEMPERATURE, TEMP_CELSIUS)
 
 from .const import (DOMAIN, SUPPORT_PRESET)
@@ -18,7 +20,7 @@ SUPPORT_FLAGS = SUPPORT_TARGET_TEMPERATURE  # | SUPPORT_PRESET_MODE
 MIN_TEMP = 14
 MAX_TEMP = 28
 
-HVAC_MODES = [HVAC_MODE_AUTO, HVAC_MODE_HEAT, HVAC_MODE_OFF]
+HVAC_MODES = [HVACMode.AUTO, HVACMode.HEAT, HVACMode.OFF]
 
 
 async def async_setup_entry(hass, entry, async_add_entities):
