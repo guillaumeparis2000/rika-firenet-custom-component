@@ -13,7 +13,8 @@ _LOGGER = logging.getLogger(__name__)
 
 DEVICE_SENSORS = [
     "stove consumption",
-    "stove runtime",
+    "stove runtime pellets",
+    "stove runtime logs",
     "stove temperature",
     "stove thermostat",
     "stove burning",
@@ -54,8 +55,10 @@ class RikaFirenetStoveSensor(RikaFirenetEntity):
     def state(self):
         if self._sensor == "stove consumption":
             return self._stove.get_stove_consumption()
-        elif self._sensor == "stove runtime":
-            return self._stove.get_stove_runtime()
+        elif self._sensor == "stove runtime pellets":
+            return self._stove.get_stove_runtime_pellets()
+        elif self._sensor == "stove runtime logs":
+            return self._stove.get_stove_runtime_logs()
         elif self._sensor == "stove temperature":
             return self._stove.get_stove_temperature()
         elif self._sensor == "stove thermostat":
@@ -79,7 +82,9 @@ class RikaFirenetStoveSensor(RikaFirenetEntity):
             return UnitOfTemperature.CELSIUS
         elif self._sensor == "stove consumption":
             return UnitOfMass.KILOGRAMS
-        elif self._sensor == "stove runtime":
+        elif self._sensor == "stove runtime pellets":
+            return UnitOfTime.HOURS
+        elif self._sensor == "stove runtime logs":
             return UnitOfTime.HOURS
         elif self._sensor == "heating power":
             return PERCENTAGE
@@ -90,7 +95,9 @@ class RikaFirenetStoveSensor(RikaFirenetEntity):
             return "mdi:thermometer"
         elif self._sensor == "stove consumption":
             return "mdi:weight-kilogram"
-        elif self._sensor == "stove runtime":
+        elif self._sensor == "stove runtime pellets":
+            return "mdi:timelapse"
+        elif self._sensor == "stove runtime logs":
             return "mdi:timelapse"
         elif self._sensor == "stove burning":
             return "mdi:fire"
