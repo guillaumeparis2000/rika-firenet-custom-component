@@ -188,8 +188,11 @@ class RikaFirenetStove:
     def get_stove_consumption(self):
         return self._state['sensors']['parameterFeedRateTotal']
 
-    def get_stove_runtime(self):
+    def get_stove_runtime_pellets(self):
         return self._state['sensors']['parameterRuntimePellets']
+
+    def get_stove_runtime_logs(self):
+        return int(self._state['sensors']['parameterRuntimeLogs'] / 60)
 
     def get_stove_temperature(self):
         return float(self._state['sensors']['inputFlameTemperature'])
